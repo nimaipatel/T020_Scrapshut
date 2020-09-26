@@ -2,7 +2,6 @@ from django.views import View
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-
 from .models import NgoAdmin, Post, Requirement
 from .forms import NGOForm, NGOInfoForm
 
@@ -54,3 +53,18 @@ def login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, '../templates/NGOlogin.html', {})
+
+
+def PostCreate(request):
+    if request.method == 'POST':
+        Post_content = Post(request.POST)
+        requirement = Requirement(request.POST)
+        if Post_content.is_valid() and requirement.is_valid():
+            Post_content.save()
+            requirement.save()
+            return redirect('Donor:homepage')
+    else:
+        Post_content = Post()
+        requirement = Requirement()
+    return(request, '../templates/post_create.html', {'Post_content': Post_content, 
+                                                      'requirement': requirement})
