@@ -29,7 +29,7 @@ def donor_reg(request):
     else:
         user_form = DonorForm()
         info_form = DonorInfoForm()
-    return render(request,'../templates/registration.html',
+    return render(request,'../templates/register.html',
                           {'user_form':user_form,
                            'info_form':info_form,
                            'registered':registered})
