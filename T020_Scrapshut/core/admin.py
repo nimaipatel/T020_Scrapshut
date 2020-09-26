@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import NgoAdmin, Post, Requirement
 
-# Register your models here.
+admin.site.register(NgoAdmin)
+admin.site.register(Post)
+admin.site.register(Requirement)
