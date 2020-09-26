@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Donor.views import Posts_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', Posts_page.as_view())
 ]
