@@ -29,7 +29,7 @@ def register(request):
     else:
         NGO_Form = NGOForm()
         NGO_Info_Form = NGOInfoForm()
-    return render(request, '../templates/NGOSignup.html', {
+    return render(request, '../templates/signupngo.html', {
         'NGO_Form': NGO_Form,
         'NGO_Info_Form': NGO_Info_Form
     })
@@ -66,5 +66,5 @@ def PostCreate(request):
     else:
         Post_content = Post()
         requirement = Requirement()
-    return(request, '../templates/post_create.html', {'Post_content': Post_content, 
+    return(request, '../templates/post_create.html', {'Post_content': Post_content,
                                                       'requirement': requirement})
