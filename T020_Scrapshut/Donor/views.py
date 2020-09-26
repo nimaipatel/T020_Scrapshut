@@ -6,14 +6,22 @@ from core.models import Post, Requirement
 from django.views import View
 from .forms import DonorForm, DonorInfoForm
 
+
+def add_donations(request):
+    requirement = Requirement.objects.filter(pk=request.POST.pk)
+    completed = requirement.completed
+    requirement.update(completed=completed + request.POST.added_items)
+
+
 def post_list(request):
     posts = Post.objects.all()
     requirements = Requirement.objects.all()
-    return render(request,'../templates/test.html',{'posts': posts, 'requirements': requirements})
+    return render(request, '../templates/test.html', {'posts': posts, 'requirements': requirements})
+
 
 def donor_reg(request):
-    registered =  False
-    if request.method == 'POST' :
+    registered = False
+    if request.method == 'POST':
         user_form = DonorForm(request.POST)
         info_form = DonorInfoForm(request.POST)
         if user_form.is_valid() and info_form.is_valid():
@@ -25,14 +33,15 @@ def donor_reg(request):
             info.save()
             registered = True
         else:
-            print(user_form.errors,info_form.errors)
+            print(user_form.errors, info_form.errors)
     else:
         user_form = DonorForm()
         info_form = DonorInfoForm()
-    return render(request,'../templates/register.html',
-                          {'user_form':user_form,
-                           'info_form':info_form,
-                           'registered':registered})
+    return render(request, '../templates/register.html',
+                  {'user_form': user_form,
+                           'info_form': info_form,
+                           'registered': registered})
+
 
 def donor_login(request):
     if request.method == 'POST':
@@ -41,16 +50,15 @@ def donor_login(request):
         user = authenticate(username=username, password=password)
         if user:
             if user.is_active:
-                login(request,user)
+                login(request, user)
                 return redirect('Donor:homepage')
             else:
                 return HttpResponse("Your account was inactive.")
         else:
             print("Someone tried to login and failed.")
-            print("They used username: {} and password: {}".format(username,password))
+            print("They used username: {} and password: {}".format(
+                username, password))
             return HttpResponse("Invalid login details given")
     else:
         return render(request, '../templates/login.html', {})
-        
 
-        
