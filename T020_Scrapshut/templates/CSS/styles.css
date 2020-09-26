@@ -28,20 +28,8 @@ header {
     line-height: 30px;
     text-align: justify;
 }
-
-.logo {
-    line-height: 20px;
-    position: fixed;
-    float: left;
-    margin: 16px 46px;
-    color: #dddddd;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 2px;
-}
-
 nav {
-    position: fixed;
+    position: sticky;
     width: 100%;
     line-height: 6px;
 }
