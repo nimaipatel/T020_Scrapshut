@@ -49,31 +49,109 @@
                      </div>
                   </nav>
                   </div>
-                  <div>
-                    <button id='dark-mode'>Dark Mode</button>
-                    <button id='light-mode'>Light Mode</button>
-                </div>
-               </header>
-            </div>
-            <section class="text-gray-700 body-font" id="posts">
-                <div class="container px-5 py-24 mx-auto">
-                  <div class="flex flex-wrap -m-4">
-                    <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-                      <a class="block relative h-48 rounded overflow-hidden">
-                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/logo.ico">
-                      </a>
-                      <div class="mt-1">
-                        <h4 class="text-gray-500 text-xs tracking-widest title-font mb-1">NGO name</h4>
-                        <span class="text-gray-900 title-font text-lg font-medium">Equipments :</span>
-                        <p class="mt-1"><h4>Number of items: <span id="count">1</span></p>
-                            <button id="increment">+</button>
-                            <button id="decrement">-</button></p>
-                            <button type="button" class="btn btn-success">Donate</button></h4>
-                      </div>
-                    </div>
-              </section>
+                  <style>
+                     * {
+                       box-sizing: border-box;
+                     }
+                     
+                     body {
+                       font-family: Arial, Helvetica, sans-serif;
+                     }
+                     
+                     /* Float four columns side by side */
+                     .column {
+                       float: left;
+                       width: 25%;
+                       padding: 0 10px;
+                     }
+                     
+                     /* Remove extra left and right margins, due to padding */
+                     .row {margin: 0 -5px;}
+                     
+                     /* Clear floats after the columns */
+                     .row:after {
+                       content: "";
+                       display: table;
+                       clear: both;
+                     }
+                     
+                     /* Responsive columns */
+                     @media screen and (max-width: 600px) {
+                       .column {
+                         width: 100%;
+                         display: block;
+                         margin-bottom: 20px;
+                         margin: 0 auto;
+                       }
+                     }
+                     
+                     /* Style the counter cards */
+                     .card {
+                       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                       margin: 0 auto;
+                       padding: 16px;
+                       text-align: center;
+                       background-color: #f1f1f1;
+                     }
+                     .row
+                     {
+                        margin-bottom: 2%;
+                     }
+                     </style>
+                     </head>
+                     <body>
+                  <hr/>
+                     
+                     <div class="row">
+                       <div class="column">
+                         <div class="card">
+                           <h3>NGO name</h3>
+                           <p>Name of the equipments: </p>
+                           <p>Quantity required: </p>
+                           <form>
+                              <label for="quantity">Quantity (minimum 1):</label>
+                              <input type="number" id="quantity" name="quantity" min="1">
+                              <button type="button" class="btn btn-success">DONATE</button></form>
+                         </div>
+                       </div>
+                     
+                       <div class="column">
+                         <div class="card">
+                           <h3>NGO name</h3>
+                           <p>Name of the equipments: </p>
+                           <p>Quantity required: </p>
+                           <form>
+                              <label for="quantity">Quantity (minimum 1):</label>
+                              <input type="number" id="quantity" name="quantity" min="1">
+                              <button type="button" class="btn btn-success">DONATE</button></form>
+                         </div>
+                       </div>
+                       
+                       <div class="column">
+                         <div class="card">
+                           <h3>NGO name</h3>
+                           <p>Name of the equipments: </p>
+                           <p>Quantity required: </p>
+                           <form>
+                              <label for="quantity">Quantity (minimum 1):</label>
+                              <input type="number" id="quantity" name="quantity" min="1">
+                              <button type="button" class="btn btn-success">DONATE</button></form>
+                         </div>
+                       </div>
+                       
+                       <div class="column">
+                         <div class="card">
+                           <h3>NGO name</h3>
+                           <p>Name of the equipments: </p>
+                           <p>Quantity required: </p>
+                           <form>
+                              <label for="quantity">Quantity (minimum 1):</label>
+                              <input type="number" id="quantity" name="quantity" min="1">
+                              <button type="button" class="btn btn-success">DONATE</button></form>
+                         </div>
+                       </div>
+                     </div>
 
-            
     </body>
     <footer>
          <!-- Bootstrap core JS-->
