@@ -13,5 +13,5 @@ class DonorForm(ModelForm):
 class DonorInfoForm(ModelForm):
      class Meta():
          model = DonorClass
-         fields = ('address','pincode')
+         fields = ('address','pincode', 'phone_no')
 
