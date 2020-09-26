@@ -20,6 +20,10 @@ header {
     font-size: larger;
     font-weight: bold;
 }
+#posts
+{
+    text-align: center;
+}
 
 .content {
     width: 94%;
@@ -27,6 +31,11 @@ header {
     font-size: 20px;
     line-height: 30px;
     text-align: justify;
+}
+.cards
+{
+    margin-right: 100rem;
+    display: flexbox;
 }
 nav {
     position: sticky;
@@ -46,6 +55,7 @@ nav ul {
     padding-right: 4%;
     transition: 1s;
 }
+
 
 nav.black ul {
     background: black;
