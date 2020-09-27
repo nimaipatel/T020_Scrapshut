@@ -5,7 +5,7 @@ from .models import DonorClass
 
 
 class DonorForm(ModelForm):
-    password1 = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(widget=forms.PasswordInput())
     class Meta():
         model = User
         fields = ('username','password','email')
