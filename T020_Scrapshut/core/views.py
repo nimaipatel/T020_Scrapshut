@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from .models import NgoAdmin, Post, Requirement
 from .forms import NGOForm, NGOInfoForm
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -54,7 +55,7 @@ def login(request):
     else:
         return render(request, '../templates/loginngo.html', {})
 
-
+@login_required
 def PostCreate(request):
     if request.method == 'POST':
         Post_content = Post(request.POST)
@@ -66,5 +67,5 @@ def PostCreate(request):
     else:
         Post_content = Post()
         requirement = Requirement()
-    return(request, '../templates/post_create.html', {'Post_content': Post_content,
+    return(request, '../templates/ngohome.html', {'Post_content': Post_content,
                                                       'requirement': requirement})
