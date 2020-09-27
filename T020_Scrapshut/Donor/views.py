@@ -5,8 +5,9 @@ from django.contrib.auth import authenticate, login
 from core.models import Post, Requirement
 from django.views import View
 from .forms import DonorForm, DonorInfoForm
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def add_donations(request):
     requirement = Requirement.objects.filter(pk=request.POST.pk)
     completed = requirement.completed
