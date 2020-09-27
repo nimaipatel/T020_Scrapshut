@@ -161,3 +161,12 @@ select.form-control {
 .form-control:focus {
     box-shadow: none;
 }
+.right
+{
+    float:right;
+    margin: 2%;
+}
+.left
+{
+    float:left;
+}
