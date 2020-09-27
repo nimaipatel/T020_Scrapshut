@@ -1,0 +1,163 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue",sans-serif;
+    font-weight: lighter;
+}
+
+header {
+    width: 100%;
+    height: 60vh;
+    background-image: url("../img/make\ a\ change.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    font-size: larger;
+    font-weight: bold;
+}
+#posts
+{
+    text-align: center;
+}
+
+.content {
+    width: 94%;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+.cards
+{
+    margin-right: 100rem;
+    display: flexbox;
+}
+nav {
+    position: sticky;
+    width: 100%;
+    line-height: 6px;
+}
+
+nav ul {
+    line-height: 20px;
+    list-style: none;
+    background: transparent;
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0 auto;
+    padding-right: 4%;
+    transition: 1s;
+}
+
+
+nav.black ul {
+    background: black;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px 40px;;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 16px;
+}
+nav ul li a :hover
+{
+    color: black;
+}
+
+.menu-icon {
+    line-height: 2px;
+    width: 100%;
+    background: black;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 2% 2%;
+    cursor: pointer;
+    color:#dddddd;
+    display: none;
+}
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+  }
+
+@media(max-width: 786px) {
+
+    .logo {
+          position: fixed;
+          top: 0;
+          margin : 0 auto;
+    }
+
+    nav ul {
+          max-height: 0px;
+          background: transparent;
+          background-color: #dddddd;
+    }
+
+    nav.black ul {
+          background:white;
+    }
+
+    .showing {
+          max-height: 34em;
+          background-color: black;
+    }
+
+    nav ul li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 2%;
+          text-align: center;
+    }
+
+    .menu-icon {
+          display: block;
+          background-color: transparent;
+    }
+
+}
+.form-control:not(select) {
+    padding: 1.5rem 0.5rem;
+}
+
+select.form-control {
+    height: 52px;
+    padding-left: 0.5rem;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}

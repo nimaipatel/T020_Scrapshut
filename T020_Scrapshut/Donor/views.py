@@ -16,8 +16,8 @@ def add_donations(request):
 def post_list(request):
     posts = Post.objects.all()
     requirements = Requirement.objects.all()
-    return render(request, '../templates/test.html', {'posts': posts, 'requirements': requirements})
-
+    username = DonorForm.objects.username
+    return render(request,'../templates/test.html',{'posts': posts, 'requirements': requirements, 'username': username})
 
 def donor_reg(request):
     registered = False
@@ -37,11 +37,10 @@ def donor_reg(request):
     else:
         user_form = DonorForm()
         info_form = DonorInfoForm()
-    return render(request, '../templates/register.html',
-                  {'user_form': user_form,
-                           'info_form': info_form,
-                           'registered': registered})
-
+    return render(request,'../templates/signupuser2.html',
+                          {'user_form':user_form,
+                           'info_form':info_form,
+                           'registered':registered})
 
 def donor_login(request):
     if request.method == 'POST':

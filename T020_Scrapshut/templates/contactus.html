@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sign Up</title>
+</head>
+<script>
+    $(function () {
+        $('input, select').on('focus', function () {
+            $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+        });
+        $('input, select').on('blur', function () {
+            $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+        });
+    });
+</script>
+
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+        <div class="wrapper">
+            <header>
+               <nav>
+                  <div class="menu-icon">
+                     <i class="fa fa-bars fa-2x"></i>
+                  </div>
+                  <div class="logo">
+                     
+                  </div>
+                  <div class="menu">
+                     <ul>
+                        <li><a href="test.html">Home</a></li>
+                        <li><a href="aboutus.html">About Us</a></li>
+                        <li><a href="contactus.html">Contact Us</a></li> 
+                        <li><a href="signupuser.html">User Sign Up</a></li>
+                        <li><a href="signupngo.html">NGO Sign UP</a></li>
+                        <li><a href="login.html">User Login</a></li>
+                        <li><a href="loginngo.html">NGO Login</a></li>
+                     </ul>
+                  </div>
+               </nav>
+               </div>
+    <div class="container">
+        <div class="row py-5 mt-4 align-items-center">
+            <!-- For Demo Purpose -->
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="https://image.freepik.com/free-vector/charity-donation-ground_24877-54492.jpg" alt=""
+                    class="img-fluid mb-3 d-none d-md-block">  
+                <p class="font-italic text-muted mb-0">"Giving is not just about making a donation , it's about making a difference."            
+            </div>
+            <!-- Registeration Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <form action="#">
+                    <div class="row">
+
+                        <!-- Name -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="Name" type="text" name="name" placeholder="Name"
+                                class="form-control bg-white border-left-0 border-md">
+                        </div>
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="email" type="email" name="email" placeholder="Email Address"
+                                class="form-control bg-white border-left-0 border-md">
+                        </div>
+                          <!-- Message area -->
+                          <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <label for="exampleFormControlTextarea1"></label>
+                            </div>
+                            <input class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                class="form-control bg-white border-left-0 border-md" placeholder="Feel free to drop in a message and let us know on how to get better! :)"></textarea>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <a href="#" class="btn btn-primary btn-block py-2">
+                                <span class="font-weight-bold">Send</span>
+                            </a>
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src ="JS/test.js"></script>
+</footer>
+</body>
+</html>
