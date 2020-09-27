@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class NgoAdmin(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=200)
-    pincode = models.CharField(max_length=6, null=True)
+    pincode = models.IntegerField(default=0)
 
     def __srt__(self):
         return self.user.name
@@ -23,6 +23,7 @@ class Post(models.Model):
 class Requirement(models.Model):
     Post = models.ForeignKey(Post, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
+    completed = models.IntegerField(default=0)
     requirement_name = models.CharField(max_length=50)
 
     def __str__(self):

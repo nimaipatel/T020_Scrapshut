@@ -7,6 +7,6 @@ class DonorClass(models.Model):
     address = models.CharField(max_length=200)
     pincode = models.DecimalField(max_digits = 7, decimal_places = 0)
     phone_no = models.DecimalField(max_digits = 10, decimal_places = 0)
-    
+
     def __srt__(self):
         return self.user.name
