@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login
 from .models import NgoAdmin, Post, Requirement
 from .forms import NGOForm, NGOInfoForm
 from django.contrib.auth.decorators import login_required
+from .forms import PostForm, RequirementForm
 
 
 def index(request):
@@ -58,8 +59,8 @@ def login(request):
 @login_required
 def PostCreate(request):
     if request.method == 'POST':
-        Post_content = Post(request.POST)
-        requirement = Requirement(request.POST)
+        Post_content = PostForm(request.POST)
+        requirement = RequirementForm(request.POST)
         if Post_content.is_valid() and requirement.is_valid():
             Post_content.save()
             requirement.save()
@@ -67,5 +68,5 @@ def PostCreate(request):
     else:
         Post_content = Post()
         requirement = Requirement()
-    return(request, '../templates/ngohome.html', {'Post_content': Post_content,
-                                                      'requirement': requirement})
+    return render(request, '../templates/ngohome.html', {'Post_content': Post_content,
+                                                            'requirement': requirement})
