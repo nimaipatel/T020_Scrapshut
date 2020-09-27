@@ -52,7 +52,7 @@ def login(request):
                 username, password))
             return HttpResponse("Invalid login details given")
     else:
-        return render(request, '../templates/NGOlogin.html', {})
+        return render(request, '../templates/loginngo.html', {})
 
 
 def PostCreate(request):
