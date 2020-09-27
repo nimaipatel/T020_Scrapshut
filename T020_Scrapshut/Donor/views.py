@@ -9,8 +9,7 @@ from .forms import DonorForm, DonorInfoForm
 def post_list(request):
     posts = Post.objects.all()
     requirements = Requirement.objects.all()
-    username = DonorForm.objects.username
-    return render(request,'../templates/test.html',{'posts': posts, 'requirements': requirements, 'username': username})
+    return render(request,'../templates/test.html',{'posts': posts,'requirements' : requirements})
 
 def donor_reg(request):
     registered =  False
