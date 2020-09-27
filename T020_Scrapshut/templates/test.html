@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,7 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="CSS/styles.css" rel="stylesheet">
+        <link href="{% static 'CSS/styles.css' %}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -93,9 +94,22 @@
                      </head>
                      <body>
                   <hr/>
+
                      
                      <div class="row">
+                        {% for post in posts %}
+
                        <div class="column">
+                         <div class="card">
+                             <h3>NGO name: {{ post.NgoAdmin.user.username }}</h3>
+                             <p>Name of the equipments: {{ post.title }} </p>
+                             <p>Quantity required: {{ post.quantity }}</p>
+                           <form>
+                              <label for="quantity">Quantity (minimum 1):</label>
+                              <input type="number" id="quantity" name="quantity" min="1">
+                              <button type="button" class="btn btn-success">DONATE</button></form>
+                       </div>
+                        {% endfor %}
                          <div class="card">
                            <h3>NGO name</h3>
                            <p>Name of the equipments: </p>
