@@ -15,6 +15,8 @@ class Post(models.Model):
     NgoAdmin = models.ForeignKey(NgoAdmin, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=400)
+    quantity = models.IntegerField(default=1)
+    completed = models.IntegerField(default=0)
 
     def __str__(self):
         return '{}: {}'.format(self.title, self.description)

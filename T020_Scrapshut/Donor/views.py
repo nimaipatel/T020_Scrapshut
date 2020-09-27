@@ -7,6 +7,7 @@ from django.views import View
 from .forms import DonorForm, DonorInfoForm
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 def add_donations(request):
     requirement = Requirement.objects.filter(pk=request.POST.pk)
@@ -17,7 +18,8 @@ def add_donations(request):
 def post_list(request):
     posts = Post.objects.all()
     requirements = Requirement.objects.all()
-    return render(request,'../templates/test.html',{'posts': posts, 'requirements': requirements})
+    return render(request, '../templates/test.html', {'posts': posts, 'requirements': requirements})
+
 
 def donor_reg(request):
     registered = False
@@ -37,10 +39,11 @@ def donor_reg(request):
     else:
         user_form = DonorForm()
         info_form = DonorInfoForm()
-    return render(request,'../templates/signupuser2.html',
-                          {'user_form':user_form,
-                           'info_form':info_form,
-                           'registered':registered})
+    return render(request, '../templates/signupuser2.html',
+                  {'user_form': user_form,
+                           'info_form': info_form,
+                           'registered': registered})
+
 
 def donor_login(request):
     if request.method == 'POST':
@@ -60,4 +63,3 @@ def donor_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, '../templates/login.html', {})
-

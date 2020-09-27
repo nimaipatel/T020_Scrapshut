@@ -94,9 +94,22 @@
                      </head>
                      <body>
                   <hr/>
+
                      
                      <div class="row">
+                        {% for post in posts %}
+
                        <div class="column">
+                         <div class="card">
+                             <h3>NGO name: {{ post.NgoAdmin.user.username }}</h3>
+                             <p>Name of the equipments: {{ post.title }} </p>
+                             <p>Quantity required: {{ post.quantity }}</p>
+                           <form>
+                              <label for="quantity">Quantity (minimum 1):</label>
+                              <input type="number" id="quantity" name="quantity" min="1">
+                              <button type="button" class="btn btn-success">DONATE</button></form>
+                       </div>
+                        {% endfor %}
                          <div class="card">
                            <h3>NGO name</h3>
                            <p>Name of the equipments: </p>
